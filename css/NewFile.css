@@ -1,0 +1,498 @@
+@CHARSET "UTF-8";
+/*============================================
+全般的なスタイル
+============================================*/
+* {
+	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
+	line-height:1.5;	/*全要素の行の高さを1.5倍にする*/
+}
+
+div#pagebody {
+	width:1500px; margin:0 auto;	/*内容全体をセンタリング*/
+	text-align:left;	/*テキストの配置を左揃えにする*/
+}
+/*============================================
+アカウント
+============================================*/
+div#account {
+	float:right;
+	height:10px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+	padding:0px 0px 0px 0px;		/*見出し内容の位置調整*/
+
+	font-size: 150%;
+	font-family:Comic Sans MS;	/*フォントの種類*/
+}
+img#sign_up {
+	position:relative;
+	right:20px;
+	top:40px;
+}
+
+img#sign_in{
+	position:relative;
+	right:20px;
+	top:40px;
+}
+
+img#cart{
+	position:relative;
+	right:20px;
+	top:40px;
+}
+img#mypage{
+	position:relative;
+	right:20px;
+	top:40px;
+}
+img#sign_out{
+	position:relative;
+	right:20px;
+	top:40px;
+}
+
+/*============================================
+ヘッダ
+============================================*/
+div#header {
+	height:100px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+	background-image:url("../photo/gtya-mu.png");	/*ヘッダ部分の背景画像*/
+	background-position: 500px 0px;
+	background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+	background-color:#97eacf;		/*ヘッダ部分の背景色*/
+	z-index:0;
+}
+h1 {
+	color: #0080ff;
+	padding:10px 0px 0px 20px;		/*見出し内容の位置調整*/
+	font-size: 400%;
+	font-family:Comic Sans MS;	/*フォントの種類*/
+}
+h1 a{text-decoration:none;} 			/*リンクの下線を無くす*/
+
+/*============================================
+検索
+============================================*/
+div#select {
+	height:30px; background-color:#1cee11; font-weight:bold;
+}
+
+/*============================================
+メインメニュー
+============================================*/
+#menu {
+1	height:42px;
+	background-color:#ffffff;
+	font-weight:bold;
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/
+}
+
+/*ボタン01～05にはそれぞれ異なる背景画像を指定する*/
+#menu01 {
+	width:450px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-image:url("../photo/Button_Earphone.gif");	/*背景画像*/
+	position:relative;
+	left:75px;
+}
+#menu02 {
+	width:450px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-image:url("../photo/Button_Headphone.gif");	/*背景画像*/
+	position:relative;
+	left:525px;
+	bottom:46px;
+}
+#menu03 {
+	width:450px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-image:url("../photo/Button_Mp3player.gif");	/*背景画像*/
+	position:relative;
+	left:975px;
+	bottom:92px;
+}
+#menu a {
+	display:block;				/*リンクをブロック表示にする*/
+	height:42px; padding-top:4px; text-align:center;
+	text-decoration:none; 			/*リンクの下線を無くす*/
+	font-size: 150%;
+	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}
+
+/*============================================
+サブメニュー（左カラム）
+============================================*/
+div#submenu {
+	width:160px;			/*幅の指定*/
+	margin:10px 10px 10px 25px;	/*位置調整（IE6のバグに注意）*/
+	position:relative; right:25px;
+	display:inline;			/*IE6のマージン算出のバグ対策*/			/*IE6のマージン算出のバグ対策*/
+	float:left;			/*サブメニューのカラムを左寄せにする*/
+}
+
+/*サブメニューのヘッダ部分（余白調整・背景画像・背景色・文字サイズなど）*/
+
+div#submenu_header h2 {
+	width:160px; height:30px ; padding:4px 0px 0px 0px;
+	background-image:url("../photo/Button_Headphone.gif");
+	background-repeat:no-repeat; background-position:top;
+	background-color:#cccccc;
+	font-size:90%; font-weight:bold; text-align:center;
+}
+
+/*サブメニューのボディ部分（余白調整・背景画像・背景色）*/
+ul#submenu_body {
+	padding:3px 1px 3px 1px;
+	background-color:#cccccc;
+}
+ul#submenu_body li {
+	font-size:100%;			/*文字サイズを90%にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+	display:inline;			/*リスト項目をインライン表示にする*/
+}
+ul#submenu_body li a {
+	display:block;			/*リンクをブロック表示にする*/
+	margin:0px 4px 0px 4px;		/*サブメニュー項目のマージン*/
+	padding:2px 0px 2px 20px;	/*サブメニュー項目のパディング*/
+	background-color:#eeeeee;	/*サブメニュー項目の背景色*/
+	text-decoration:none;		/*リンクの下線を無くす*/
+}
+ul#submenu_body li a:hover {
+	background-color:#ffffff;	/*リンクにマウスが乗ったら色を変える*/
+}
+
+/*============================================
+新製品紹介（中央カラム）
+============================================*/
+div#new_product {
+	width:390px; margin-right:5px; padding-top:10px; /*幅の指定と位置調整*/
+	float:right;
+}
+
+div#new_product_header h3 {
+	line-height: 10px;
+	padding-bottom:10px;
+}
+
+div#new_product_body {
+	float:right;
+}
+
+/*============================================
+売れ筋製品（中央カラム）
+============================================*/
+div#top_product {
+	width:390px; margin-right:5px; padding-top:10px; /*幅の指定と位置調整*/
+	float:right;
+}
+
+div#top_product_header h3 {
+	line-height: 10px;
+	padding-bottom:10px;
+}
+
+div#top_product_body {
+	float:right;
+}
+
+/*============================================
+注目製品！！（中央カラム）
+============================================*/
+div#chumoku {
+	width:390px; margin-right:5px; padding-top:10px; /*幅の指定と位置調整*/
+	float:right;
+}
+
+div#chumoku_header h3 {
+	line-height: 10px;
+	padding-bottom:10px;
+}
+
+div#chumoku_body {
+	float:left;
+}
+
+#chumoku_product a{
+	padding_top:30px;
+}
+hr {width: 380px; height:1px; border:solid 1px #ff0080;}
+
+/*============================================
+Sign In（中央カラム）
+============================================*/
+div#SignIn {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:210%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+
+div#SignIn_header h3 {
+	line-height: 10px;
+}
+
+div#SignIn_body {
+
+}
+hr {width: 380px; height:1px; border:solid 1px #ff0080;}
+
+/*============================================
+Sign Up（中央カラム）
+============================================*/
+div#SignUp {
+	width:500px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:100%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+
+div#SignUp_header h3 {
+	line-height: 10px;
+}
+
+div#SignUp_body {
+
+}
+hr {width: 380px; height:1px; border:solid 1px #ff0080;}
+
+form#form {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    color: #666;
+    background: #F0F8F1;
+    /*↓背景グラデーションの指定*/
+    background: -moz-linear-gradient(top, #FBFCFC, #F0F8F1);
+    background: -webkit-linear-gradient(top, #FBFCFC, #F0F8F1);
+    background: linear-gradient(#FBFCFC, #F0F8F1);
+}
+
+form#form ul { /*リスト要素ulを初期化*/
+    padding:0;
+    margin:0
+}
+form#form ul li { /*liも初期化し、ボーダーなどを指定*/
+    list-style:none;
+    margin:0px;
+    padding:10px;
+    border-top: 2px solid #FFF;
+    font-size: 12px;
+}
+form#form ul li:first-child { /*最初のliにはボーダーをつけない*/
+    border-top:none;
+}
+
+/* span要素をブロック化しフロートでフォーム部品と横に並べる*/
+form#form ul li span {
+    width: 14em;
+    margin:0px;
+    display:block;
+    float:left;
+}
+
+form#form1 ul li p label {
+    margin-right: 2em;
+    display: block;
+    float: left;
+}
+
+
+
+/*============================================
+earphone（中央カラム）
+============================================*/
+div#earphone {
+	height:40px;
+	background-image:url("../photo/h2_earphone.gif");
+	background-repeat:no-repeat;
+	background-position: 25%;
+	font-size: 120%;
+	font-family:Comic Sans MS;	/*フォントの種類*/
+}
+
+div#earphone_body {
+}
+li#all,li#canal,li#inner {
+	float:left;			/*リスト項目を横に並べる*/
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/
+	margin:50px 0px 5px 0px;
+}
+
+/*============================================
+マイページ
+============================================*/
+div#mypage {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:210%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+div#mypage_header {
+
+}
+ul#mypage_body {
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+}
+
+/*============================================
+カート
+============================================*/
+div#cart {
+
+}
+div#cart_header {
+
+}
+ul#cart_body {
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+}
+
+li#price {
+	float:left;
+	position:relative; left:600px;
+}
+
+li#kosu {
+	float:left;
+	position:relative; left:800px;
+}
+
+hr#cart_keisen {
+	position:relative; left:0px;
+	width: 1100px; height:1px; border:solid 1px #400080;
+}
+
+A#price {
+	position:relative; left:600px;
+}
+
+/*============================================
+住所選択
+============================================*/
+div#from {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:100%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+hr#from_keisen {
+	float:left;
+	width: 400px; height:1px; border:solid 1px #400080;
+}
+
+/*============================================
+製品詳細
+============================================*/
+div#product {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:100%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+
+div#product_header {
+	font-size:110%;
+	font-weight:bold;
+	color:#000000;
+}
+
+div#product_body {
+
+}
+
+p#maker {
+	width:100px; height:30px;
+	background-image:url("../photo/maker.gif");
+	background-repeat:no-repeat;
+}
+p#product_neme {
+	float:none;
+}
+
+/*============================================
+お支払方法の確認
+============================================*/
+div#shiharai {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:100%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+
+div#shiharai_header {
+	font-size:110%;
+	font-weight:bold;
+	color:#000000;
+}
+
+div#shiharai_body {
+
+}
+
+/*============================================
+お支払方法の確認
+============================================*/
+div#taikai {
+	width:390px;
+	height:100px;
+	margin:5px 5px 10px 10px;
+	padding:7px 0px 10px 0px; /*幅の指定と位置調整*/
+	float:left;
+	font-size:100%;
+	font-weight:bold;
+	position:relative; left:300px;
+}
+
+div#taikai_header {
+	font-size:110%;
+	font-weight:bold;
+	color:#000000;
+}
+
+div#taikai_body {
+
+}
+
+/*============================================
+フッタ
+============================================*/
+div#footer {
+	height:70px; text-align:center;
+	clear:both;					/*回り込みを解除する*/
+	background-image:url("../photo/Sample_footer.jpg");	/*フッタ部分の背景画像*/
+	background-position: 50% 70%;
+	background-repeat:no-repeat;			/*背景画像を繰り返さない*/
+	background-color:#ffcce6;			/*フッタ部分の背景色*/
+}
+address {
+	font-style:normal;			 /*フォントスタイルを標準にする*/
+	font-size:small;			 /*フォントサイズを小さくする*/
+	padding:5px 0px 5px 0px;		 /*要素内容の位置調整*/
+}
+
