@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../css/NewFile.css" type="text/css">
 </head>
 <body>
-<?php ?><div id="pagebody">
+<div id="pagebody">
 	<!-- アカウント -->
 	<div id="account">
 		<a href="Sign Up.php"><img id=sign_up src="../photo/Button_Sign_Up.gif" alt="Sign Up"></a>
@@ -193,5 +193,5 @@
 	<div id="footer"><address>Copyright (c) HTMQ All Rights Reserved.</address></div>
 
 </div>
-<?php ?></body>
+</body>
 </html>

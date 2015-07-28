@@ -1,3 +1,13 @@
+<?php 
+
+$link = mysql_connect('localhost', 'root', '');
+$db_select = mysql_select_db('audioyamauchi', $link);
+mysql_set_charset('utf8');
+
+$result = mysql_query("select name, price, memo, picture from product where genre_ID = 1");
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +16,7 @@
 <link rel="stylesheet" href="../css/NewFile.css" type="text/css">
 </head>
 <body>
-<?php ?><div id="pagebody">
+<div id="pagebody">
 	<!-- アカウント -->
 	<div id="account">
 		<a href="Sign Up.php"><img id=sign_up src="../photo/Button_Sign_Up.gif" alt="Sign Up"></a>
@@ -20,15 +30,15 @@
 
 	<!-- 検索 -->
 	<div id="select" align="center">
-		<form action="Product.php" method="post">
-		<select name="kaden">
-		<option value="earphone">イヤホン</option>
-		<option value="headphone">ヘッドホン</option>
-		<option value="anything">その他</option>
-		</select>
-		<input type="text" name="name" size="100">
-		<input type="submit" name="submit" value="検索">
-		</form>
+<!-- 		<form action="Product.php" method="post"> -->
+<!-- 		<select name="kaden"> -->
+<!-- 		<option value="earphone">イヤホン</option> -->
+<!-- 		<option value="headphone">ヘッドホン</option> -->
+<!-- 		<option value="anything">その他</option> -->
+<!-- 		</select> -->
+<!-- 		<input type="text" name="name" size="100"> -->
+<!-- 		<input type="submit" name="submit" value="検索"> -->
+<!-- 		</form> -->
 	</div>
 
 	<!-- メインメニュー -->
@@ -64,18 +74,34 @@
 	<div id="earphone"><h2>トップ＞イヤホン</h2></div>
 
 		<ol id="earphone_body">
-			<li id="all">
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A><h3>すべてのイヤホン</h3>
-			<hr></li>
-			<li id="canal">
-			<A Href="Product.php">
-			<img src="../photo/MDR-1A.jpg" alt="MDR-1A" Border="0" width="200" height="155" /></A><h3>カナル型</h3>
-			<hr></li>
-			<li id="inner">
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A><h3>インナーイヤー</h3>
-			<hr></li>
+		<table>
+		<?php 
+		while($row = mysql_fetch_assoc($result)){
+		?>
+		<tr>
+		<td><a href="product.php"><img src=<?php print $row['picture']; ?> Border=0 width=200 height=155 /></a></td>
+		<td><?php print $row['memo']; ?></td>
+		</tr>
+		<?php 
+// 			print("<tr>");
+// 			print("<td><a href=><img src=".$row['picture']." Border=0 width=200 height=155 /></td>");
+// 			print("<td>".$row['memo']."</td>");
+// 			print("</tr>");
+		}
+		?>
+		</table>
+<!-- 			<li id="all"> -->
+<!-- 			<A Href="Product.php"> -->
+<!-- 			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A><h3>すべてのイヤホン</h3> -->
+<!-- 			<hr></li> -->
+<!-- 			<li id="canal"> -->
+<!-- 			<A Href="Product.php"> -->
+<!-- 			<img src="../photo/MDR-1A.jpg" alt="MDR-1A" Border="0" width="200" height="155" /></A><h3>カナル型</h3> -->
+<!-- 			<hr></li> -->
+<!-- 			<li id="inner"> -->
+<!-- 			<A Href="Product.php"> -->
+<!-- 			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A><h3>インナーイヤー</h3> -->
+<!-- 			<hr></li> -->
 		</ol>
 		</div>
 
@@ -83,5 +109,5 @@
 	<div id="footer"><address>Copyright (c) HTMQ All Rights Reserved.</address></div>
 
 </div>
-<?php ?></body>
+</body>
 </html>

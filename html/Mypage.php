@@ -1,26 +1,30 @@
 <?php
-
-
-$id = $_POST['id'];
-$pass = $_POST['pass'];
-
-$id_a = "";
-$name = "";
-
-$link = mysql_connect('localhost', 'root', '');
-$db_select = mysql_select_db('audioyamauchi', $link);
-mysql_set_charset('utf8');
-
-$result = mysql_query("select name from member where member_ID = '$id' and pass = '$pass'");
-$row = mysql_fetch_assoc($result);
-$name = $row['name'];
-
-if(!$name){
-	include 'Sign In.php';
+session_start();
+if(!isset($_SESSION['name'])){
+	
+	$id = $_POST['id'];
+	$pass = $_POST['pass'];
+	
+	$id_a = "";
+	$name = "";
+	
+	$link = mysql_connect('localhost', 'root', '');
+	$db_select = mysql_select_db('audioyamauchi', $link);
+	mysql_set_charset('utf8');
+	
+	$result = mysql_query("select name from member where member_ID = '$id' and pass = '$pass'");
+	$row = mysql_fetch_assoc($result);
+	$name = $row['name'];
+	
+	if(!$name){
+		include 'Sign In.php';
+	}else{
+		$_SESSION['name'] = $name;
+		session_write_close();
+		include 'Mypage.php';
+	}
+	mysql_close($link);
 }else{
-
-	session_start();
-	$_SESSION['name'] = $name;
 
 ?>
 <!DOCTYPE html>
@@ -107,5 +111,4 @@ if(!$name){
 </html>
 <?php
 }
-mysql_close($link);
 ?>

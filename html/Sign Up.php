@@ -66,50 +66,50 @@
 		<div id=SignUp_header><h2>Sign Up</h2></div>
 		<div id=SignUp_body>
 		<hr>
-		<form action="Mypage.php" method="post">
-    	mail:　<input type="text" name="id" size=25><br>
-    	<br>
-    	パスワード:　<input type="text" name="pass" size=23><br>
-    	パスワードの確認:<input type="text" name="pass" size=23><br>
-    	名前:<input type="text" name="pass" size=23><br>
-    	フリガナ:<input type="text" name="pass" size=23><br>
-    	電話番号:<input type="text" name="pass" size=23><br>
-    	生年月日:<select name="生年">
- 				 <option value="1">1990</option>
- 				 <option value="2">1991</option>
- 				 <option value="3">1992</option>
- 				 <option value="4">1993</option>
- 				 <option value="5">1994</option>
- 				 <option value="6">1995</option>
- 				 <option value="7">1996</option>
- 				 <option value="8">1997</option>
- 				 <option value="9">1998</option>
- 				 <option value="10">1999</option>
- 				</select>/
- 				<select name="月">
- 				 <option value="1">1</option>
- 				 <option value="2">2</option>
- 				 <option value="3">3</option>
- 				 <option value="4">4</option>
- 				 <option value="5">5</option>
- 				 <option value="6">6</option>
- 				 <option value="7">7</option>
- 				 <option value="8">8</option>
- 				 <option value="9">9</option>
+		<form action="account_add.php" method="post">
+    	mail:　<input type="text" name="id" size=25 value="13011165@st.asojuku.ac.jp" required><br>
+    	パスワード:　<input type="text" name="pass" size=23 value="nisizono" required><br>
+    	パスワードの確認:<input type="text" name="pass_pass" size=23 value="nisizono" required><br>
+    	名前:<input type="text" name="name" size=23 value="最中" required><br>
+    	フリガナ:<input type="text" name="huri" size=23 value="モナカ" required><br>
+    	住所：<input type="text" name="address" size=32 value="福岡県福岡市博多区" required><br>
+    	電話番号:<input type="text" name="telephone" size=23 value="09012345678" required><br>
+    	生年月日:<select name="year">
+ 				 <option value="1990">1990</option>
+ 				 <option value="1991">1991</option>
+ 				 <option value="1992">1992</option>
+ 				 <option value="1993">1993</option>
+ 				 <option value="1994">1994</option>
+ 				 <option value="1995">1995</option>
+ 				 <option value="1996">1996</option>
+ 				 <option value="1997">1997</option>
+ 				 <option value="1998">1998</option>
+ 				 <option value="1999">1999</option>
+ 				</select>
+ 				<select name="month">
+ 				 <option value="01">1</option>
+ 				 <option value="02">2</option>
+ 				 <option value="03">3</option>
+ 				 <option value="04">4</option>
+ 				 <option value="05">5</option>
+ 				 <option value="06">6</option>
+ 				 <option value="07">7</option>
+ 				 <option value="08">8</option>
+ 				 <option value="09">9</option>
  				 <option value="10">10</option>
  				 <option value="11">11</option>
  				 <option value="12">12</option>
- 				</select>/
- 				<select name="日">
- 				 <option value="1">1</option>
- 				 <option value="2">2</option>
- 				 <option value="3">3</option>
- 				 <option value="4">4</option>
- 				 <option value="5">5</option>
- 				 <option value="6">6</option>
- 				 <option value="7">7</option>
- 				 <option value="8">8</option>
- 				 <option value="9">9</option>
+ 				</select>
+ 				<select name="day">
+ 				 <option value="01">1</option>
+ 				 <option value="02">2</option>
+ 				 <option value="03">3</option>
+ 				 <option value="04">4</option>
+ 				 <option value="05">5</option>
+ 				 <option value="06">6</option>
+ 				 <option value="07">7</option>
+ 				 <option value="08">8</option>
+ 				 <option value="09">9</option>
  				 <option value="10">10</option>
  				 <option value="11">11</option>
  				 <option value="12">12</option>
@@ -134,9 +134,9 @@
  				 <option value="31">31</option>
  				</select><br>
 
-    	性別:男性<input type="radio" name="sex" text="男">
-    		 女性<input type="radio" name="sex" text="女"><br>
-    	<input type="submit" value="Sign Up">
+    	性別:男性<input type="radio" name="sex" value="男" checked>
+    		 女性<input type="radio" name="sex" value="女"><br>
+    	<input type="submit" value="登録">
 		</form>
 		<hr>
 		</div>
