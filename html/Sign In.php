@@ -68,10 +68,10 @@
 		<form action="Mypage.php" method="post" id="form">
 		<ul>
 		<li>
-    	<label><span>ユーザーID</span><input required type="text" name="id" size=25 value="1301165@st.asojuku.ac.jp" required</label>
+    	<label><span>ユーザーID</span><input required type="text" name="id" size=25 value="1301165@st.asojuku.ac.jp" required></label>
     	</li>
     	<li>
-    	<label><span>パスワード</span><input type="text" name="pass" size=23 value="audioyamauchi" required</label>
+    	<label><span>パスワード</span><input type="text" name="pass" size=23 value="audioyamauchi" required></label>
     	</li>
     	<li>
     	<p>
