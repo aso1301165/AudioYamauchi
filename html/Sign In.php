@@ -65,14 +65,20 @@
 	<div id="SignIn">
 		<div id=SignIn_header><h2>Sign In</h2></div>
 		<div id=SignIn_body>
-		<hr>
-		<form action="Mypage.php" method="post">
-    	　　　　　ID　:　<input required type="text" name="id" size=25 value="1301165@st.asojuku.ac.jp"><br>
-    	<br>
-    	パスワード　:　<input type="text" name="pass" size=23 value="audioyamauchi"><br>
+		<form action="Mypage.php" method="post" id="form">
+		<ul>
+		<li>
+    	<label><span>ユーザーID</span><input required type="text" name="id" size=25 value="1301165@st.asojuku.ac.jp" required</label>
+    	</li>
+    	<li>
+    	<label><span>パスワード</span><input type="text" name="pass" size=23 value="audioyamauchi" required</label>
+    	</li>
+    	<li>
+    	<p>
     	<input type="submit" value="Sign In">
+    	</p>
+    	</li>
 		</form>
-		<hr>
 		</div>
 	</div>
 
