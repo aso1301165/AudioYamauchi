@@ -37,15 +37,15 @@ session_start();
 
 	<!-- 検索 -->
 	<div id="select" align="center">
-<!-- 		<form action="Product.html" method="post"> -->
-<!-- 			<select name="kaden"> -->
-<!-- 				<option value="earphone">イヤホン</option> -->
-<!-- 				<option value="headphone">ヘッドホン</option> -->
-<!-- 				<option value="anything">その他</option> -->
-<!-- 			</select> -->
-<!-- 			<input type="text" name="name" size="100"> -->
-<!-- 			<input type="submit" name="submit" value="検索"> -->
-<!-- 		</form> -->
+		<form action="Product.html" method="post">
+			<select name="kaden">
+				<option value="earphone">イヤホン</option>
+				<option value="headphone">ヘッドホン</option>
+				<option value="anything">その他</option>
+			</select>
+			<input type="text" name="name" size="100">
+			<input type="submit" name="submit" value="検索">
+		</form>
 	</div>
 
 	<!-- メインメニュー -->
