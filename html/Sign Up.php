@@ -65,16 +65,35 @@
 	<div id="SignUp">
 		<div id=SignUp_header><h2>Sign Up</h2></div>
 		<div id=SignUp_body>
-		<hr>
-		<form action="account_add.php" method="post">
-    	mail:　<input type="text" name="id" size=25 value="13011165@st.asojuku.ac.jp" required><br>
-    	パスワード:　<input type="text" name="pass" size=23 value="nisizono" required><br>
-    	パスワードの確認:<input type="text" name="pass_pass" size=23 value="nisizono" required><br>
-    	名前:<input type="text" name="name" size=23 value="最中" required><br>
-    	フリガナ:<input type="text" name="huri" size=23 value="モナカ" required><br>
-    	住所：<input type="text" name="address" size=32 value="福岡県福岡市博多区" required><br>
-    	電話番号:<input type="text" name="telephone" size=23 value="09012345678" required><br>
-    	生年月日:<select name="year">
+		<form action="account_add.php" method="post" id="form">
+		<ul>
+		<li>
+    	<label><span>mail</span><input type="text" name="id" size=25 value="13011165@st.asojuku.ac.jp" required></label>
+    	</li>
+    	<li>
+    	<label><span>パスワード</span><input type="text" name="pass" size=23 value="nisizono" required></label>
+    	</li>
+    	<li>
+    	<label><span>パスワードの確認</span><input type="text" name="pass_pass" size=23 value="nisizono" required></label>
+    	<li>
+    	<label><span>名前</span><input type="text" name="name" size=23 value="最中" required></label>
+    	</li>
+    	<li>
+    	<label><span>フリガナ</span><input type="text" name="huri" size=23 value="モナカ" required></label>
+    	</li>
+    	<li>
+    	<label><span>住所</span><input type="text" name="address" size=32 value="福岡県福岡市博多区" required></label>
+    	</li>
+    	<li>
+    	<label><span>電話番号</span><input type="text" name="telephone" size=23 value="09012345678" required></label>
+    	</li>
+    	<li>
+    	<span>性別</span>
+    		 <label>男性<input type="radio" name="sex" value="男" checked></label>
+    		 <label>女性<input type="radio" name="sex" value="女"></label>
+    	</li>
+    	<li>
+    	<label><span>生年月日</span><select name="year">
  				 <option value="1990">1990</option>
  				 <option value="1991">1991</option>
  				 <option value="1992">1992</option>
@@ -132,11 +151,13 @@
  				 <option value="29">29</option>
  				 <option value="30">30</option>
  				 <option value="31">31</option>
- 				</select><br>
-
-    	性別:男性<input type="radio" name="sex" value="男" checked>
-    		 女性<input type="radio" name="sex" value="女"><br>
+ 				</select></label>
+ 		</li>
+ 		<li>
+ 		<p>
     	<input type="submit" value="登録">
+    	</p>
+    	</li>
 		</form>
 		<hr>
 		</div>

@@ -65,16 +65,34 @@
 	<div id="SignUp">
 		<div id=SignUp_header><h2>アカウント設定</h2></div>
 		<div id=SignUp_body>
-		<hr>
-		<form action="Mypage.php" method="post">
-    	mail:　<input type="text" name="id" size=25><br>
-    	<br>
-    	パスワード:　<input type="text" name="pass" size=23><br>
-    	パスワードの確認:<input type="text" name="pass" size=23><br>
-    	名前:<input type="text" name="pass" size=23><br>
-    	フリガナ:<input type="text" name="pass" size=23><br>
-    	電話番号:<input type="text" name="pass" size=23><br>
-    	生年月日:<select name="生年">
+		<form action="Mypage.php" method="post" id="form">
+			<p class="attention">すべてご記入ください</p>
+		<ul>
+    	<li>
+    	<label><span>mail</span><input type="text" name="id" size=25 required></label>
+    	</li>
+    	<li>
+    	<label><span>パスワード</span><input type="text" name="pass" size=23 required></label>
+    	</li>
+    	<li>
+    	<label><span>パスワードの確認</span><input type="text" name="pass" size=23 required></label>
+    	</li>
+    	<li>
+    	<label><span>名前</span><input type="text" name="pass" size=23 required=></label>
+    	</li>
+    	<li>
+    	<label><span>フリガナ</span><input type="text" name="pass" size=23 required></label>
+    	</li>
+    	<li>
+    	<label><span>電話番号</span><input type="text" name="pass" size=23 required></label>
+    	</li>
+    	<li>
+    	<span>性別</span>
+    		<label>男性<input type="radio" name="sex" text="男"></label>
+    		<label>女性<input type="radio" name="sex" text="女"></label>
+    	</li>
+    	<li>
+    	<label><span>生年月日</span><select name="生年">
  				 <option value="1">1990</option>
  				 <option value="2">1991</option>
  				 <option value="3">1992</option>
@@ -132,12 +150,15 @@
  				 <option value="29">29</option>
  				 <option value="30">30</option>
  				 <option value="31">31</option>
- 				</select><br>
-    	性別:男性<input type="radio" name="sex" text="男">
-    		 女性<input type="radio" name="sex" text="女"><br>
+ 				</select></label>
+ 		</li>
+ 		<li>
+ 		<p>
     	<input type="submit" value="Change">
+    	</p>
+    	</li>
+    	</ul>
 		</form>
-		<hr>
 		</div>
 	</div>
 
