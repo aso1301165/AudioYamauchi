@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+$name = $_SESSION['name'];
+
+$link = mysql_connect('localhost', 'root', '');
+$db_select = mysql_select_db('audioyamauchi', $link);
+mysql_set_charset('utf8');
+
+$result = mysql_query("select name from member m,cart c where m.name = '$name' and pass = '$pass'");
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +23,19 @@
 <div id="pagebody">
 	<!-- アカウント -->
 	<div id="account">
+	<?php
+	if(!isset($_SESSION['name'])){
+	?>
 		<a href="Sign Up.php"><img id=sign_up src="../photo/Button_Sign_Up.gif" alt="Sign Up"></a>
 		<a href="Sign In.php"><img id=sign_in src="../photo/Button_Sign_In.gif" alt="Sign In"></a>
+	<?php
+	}else{
+	?>
+		<a href="Mypage.php"><img id=mypage src="../photo/Button_Mypage.gif" alt="My Page"></a>
+		<a href="logout.php"><img id=sign_out src="../photo/Button_Sign_out.gif" alt="Sign Out"></a>
+	<?php
+	}
+	?>
 		<a href="Cart.php"><img id=cart src="../photo/Cart.gif" alt="Cart"></a>
 	</div>
 
@@ -64,7 +89,7 @@
 	<!-- サブメニュー（左カラム） -->
 	<div id="cart">
 		<div id="cart_header"><h2>商品内訳</h2></div>
-		<Table Border="1" Border Width="700" Height="500" align="left">
+		<Table Border="1"  Width="700" Height="500" align="left">
  			<Tr>
  			<Th>購入</Th><Th>カートに追加した商品</Th><Th>単価</Th><th>注文個数</th><th>削除</th>
  			</Tr>

@@ -9,8 +9,8 @@
 <?php ?><div id="pagebody">
 	<!-- アカウント -->
 	<div id="account">
-		<a href="Sign Up.php"><img id=sign_up src="../photo/Button_Sign_Up.gif" alt="Sign Up"></a>
-		<a href="Sign In.php"><img id=sign_in src="../photo/Button_Sign_In.gif" alt="Sign In"></a>
+		<a href="Mypage.php"><img id=mypage src="../photo/Button_Mypage.gif" alt="My Page"></a>
+		<a href="logout.php"><img id=sign_out src="../photo/Button_Sign_out.gif" alt="Sign Out"></a>
 		<a href="Cart.php"><img id=cart src="../photo/Cart.gif" alt="Cart"></a>
 	</div>
 
@@ -66,10 +66,11 @@
 		<div id="taikai_header"><h2>退会設定</h2></div>
 		<div id="taikai_body">
 		<p>アカウントを破棄しますか？</p>
-		<form action="Taikai_Commentphp" method="post">
-		了承する<input type="radio" name="from" value="了承する">
-		了承しない<input type="radio" name="from" value="了承しない" checked="checked"><br>
-		<input type="submit" name="name" value="確定">
+		<form action="Taikai_Comment.php" method="post">
+		<input type="submit" value="了承する">
+		</form>
+		<form action="Mypage.php" method="post">
+		<input type="submit" value="了承しない"><br>
 		</form>
 		</div>
 	</div>
