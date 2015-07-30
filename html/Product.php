@@ -93,18 +93,21 @@ $result = mysql_query("select name, format(price,0) as prices, picture from prod
 		<?php 
 		while($row = mysql_fetch_assoc($result)){
 		?>
+		<form action="product_add.php" method="post">
 		<tr>
 		<td rowspan=2><img src=<?php print $row['picture']; ?> Border=0 width=180 height=180 /></td>
 		<td><?php print $row['name']; ?></td>
 		<td rowspan=2><input type="submit" value="カートに追加">
+		<input type="hidden" name="product2" value="<?php print $row['name']?>">
 		</tr>
 		<tr>
 		<td>価格　：　￥<?php print $row['prices']; ?></td>
 		</tr>
+		</form>
 		<?php 
 		}
 		?>
-		</table>
+				</table>
 		
 <!-- 			<li id="all"> -->
 <!-- 			<A Href="Product.php"> -->
