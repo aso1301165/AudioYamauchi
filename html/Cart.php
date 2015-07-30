@@ -1,13 +1,13 @@
 <?php
 
 session_start();
-$name = $_SESSION['name'];
 
 $link = mysql_connect('localhost', 'root', '');
 $db_select = mysql_select_db('audioyamauchi', $link);
 mysql_set_charset('utf8');
 
-$result = mysql_query("select name from member m,cart c where m.name = '$name' and pass = '$pass'");
+$result = mysql_query("select p.name as name, format(p.price, 0) as price, p.picture as pic from product p, cart c where p.product_ID = c.product_ID and c.cart_ID = 1");
+
 
 
 ?>
@@ -67,22 +67,22 @@ $result = mysql_query("select name from member m,cart c where m.name = '$name' a
 	<div id="submenu">
 		<div id="submenu_header"><h2>メーカーで探す</h2></div>
 		<ul id="submenu_body">
-			<li><a href="Company.php">SONY</a></li>
-			<li><a href="Company.php">audio-technica</a></li>
-			<li><a href="Company.php">JVC</a></li>
-			<li><a href="Company.php">sennheiser</a></li>
-			<li><a href="Company.php">ELECOM</a></li>
-			<li><a href="Company.php">SHURE</a></li>
-			<li><a href="Company.php">BOSE</a></li>
-			<li><a href="Company.php">AKG</a></li>
-			<li><a href="Company.php">westone</a></li>
-			<li><a href="Company.php">Astrotec</a></li>
-			<li><a href="Company.php">pioneer</a></li>
-			<li><a href="Company.php">GRADO</a></li>
-			<li><a href="Company.php">beyerdynamic</a></li>
-			<li><a href="Company.php">ULTRASONE</a></li>
-			<li><a href="Company.php">PHILIPS</a></li>
-			<li><a href="Company.php">Panasonic</a></li>
+			<li><a href="">SONY</a></li>
+			<li><a href="">audio-technica</a></li>
+			<li><a href="">JVC</a></li>
+			<li><a href="">sennheiser</a></li>
+			<li><a href="">ELECOM</a></li>
+			<li><a href="">SHURE</a></li>
+			<li><a href="">BOSE</a></li>
+			<li><a href="">AKG</a></li>
+			<li><a href="">westone</a></li>
+			<li><a href="">Astrotec</a></li>
+			<li><a href="">pioneer</a></li>
+			<li><a href="">GRADO</a></li>
+			<li><a href="">beyerdynamic</a></li>
+			<li><a href="">ULTRASONE</a></li>
+			<li><a href="">PHILIPS</a></li>
+			<li><a href="">Panasonic</a></li>
 		</ul>
 	</div>
 
@@ -90,6 +90,9 @@ $result = mysql_query("select name from member m,cart c where m.name = '$name' a
 	<div id="cart">
 		<div id="cart_header"><h2>商品内訳</h2></div>
 		<Table Border="1"  Width="700" Height="500" align="left">
+		<?php 
+		while($row = mysql_fetch_assoc($result)){
+		?>
  			<Tr>
  			<Th>購入</Th><Th>カートに追加した商品</Th><Th>単価</Th><th>注文個数</th><th>削除</th>
  			</Tr>
@@ -100,13 +103,12 @@ $result = mysql_query("select name from member m,cart c where m.name = '$name' a
   			</td>
 
   			<Td Align="center" Valign="middle">
-  			<A id=price Href="Product.php" Target="_blank">
-			<img src="../photo/SHE9710.jpg" Align="left" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			SHE9710
+			<img src="<?php print $row['pic']; ?>" Align="left" alt="SHE9710" Border="0" width="200" height="155" />
+			<?php print $row['name']; ?>
   			</td>
 
 			<td>
-			1990円
+			￥<?php print $row['price'];?>
 			</td>
 
 			<td width="60" align="center">
@@ -147,10 +149,13 @@ $result = mysql_query("select name from member m,cart c where m.name = '$name' a
 
 			<td width="40" bgcolor="#ffffff" nowrap align="center">
     		<font size="-1">
-          	<a href="Product.php"><img src="../photo/Button_Delete.gif" border="0" width="50" height="21" vspace="5"></a>
+          	<img src="../photo/Button_Delete.gif" border="0" width="50" height="21" vspace="5">
         	</font>
   			</td>
   			</Tr>
+  			<?php 
+  			}
+  			?>
 
 			<Tr>
 			<td align="center">

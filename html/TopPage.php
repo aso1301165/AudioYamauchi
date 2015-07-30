@@ -2,6 +2,14 @@
 
 session_start();
 
+$link = mysql_connect('localhost', 'root', '');
+$db_select = mysql_select_db('audioyamauchi', $link);
+mysql_set_charset('utf8');
+
+$ear = mysql_query("select name, format(price,0) as prices, picture from product where genre_ID = 1 and product_ID between 1 and 3");
+$head = mysql_query("select name, format(price,0) as prices, picture from product where genre_ID = 2 and product_ID between 6 and 8");
+$etc = mysql_query("select name, format(price,0) as prices, picture from product where genre_ID = 3 and product_ID between 11 and 13");
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +45,7 @@ session_start();
 
 	<!-- 検索 -->
 	<div id="select" align="center">
-		<form action="Product.html" method="post">
+		<form action="Product.php" method="post">
 			<select name="kaden">
 				<option value="earphone">イヤホン</option>
 				<option value="headphone">ヘッドホン</option>
@@ -80,69 +88,63 @@ session_start();
 
 	<!-- 中央カラム -->
 	<div id="center">
-		<h2>イヤホン・ヘッドホン</h2>
+		<h2>新製品紹介</h2>
 		<!-- 新製品紹介（中央カラム） -->
 		<div id="new_product">
-		<div id="new_product_header"><h3>新製品紹介</h3></div>
+		<div id="new_product_header"><h3>イヤホン</h3></div>
 		<hr>
 		<ol id="new_product_body">
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/MDR-1A.jpg" alt="MDR-1A" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			</li>
+			<table>
+			<?php 
+			while($row = mysql_fetch_assoc($ear)){
+			?>
+			<tr>
+			<td><a href="EarPhone.php"><img src=<?php print $row['picture']; ?> Border=0 width=180 height=180 /></a></td>
+			</tr>
+			<?php 
+			}
+			?>
+		</table>
 		</ol>
 		<hr>
 		</div>
 
 		<!-- 売れ筋製品（中央カラム） -->
 		<div id="top_product">
-		<div id="top_product_header"><h3>売れ筋製品</h3></div>
+		<div id="top_product_header"><h3>ヘッドホン</h3></div>
 		<hr>
 		<ol id="top_product_body">
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/MDR-1A.jpg" alt="MDR-1A" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			</li>
+		<table>
+			<?php 
+			while($row = mysql_fetch_assoc($head)){
+			?>
+			<tr>
+			<td><a href="HeadPhone.php"><img src=<?php print $row['picture']; ?> Border=0 width=180 height=180 /></a></td>
+			</tr>
+			<?php 
+			}
+			?>
+		</table>
 		</ol>
 		<hr>
 		</div>
 
 		<!-- 注目製品！！（中央カラム） -->
 		<div id="chumoku">
-		<div id="chumoku_header"><h3>注目製品！！</h3></div>
+		<div id="chumoku_header"><h3>MP3プレイヤー</h3></div>
 		<hr>
 		<ol id="chumoku_body">
-			<li>
-			<A Href="Product.php">
-			メーカー：oriolus 製品名：oriolus
-			<img src="../photo/oriolus.jpg" alt="oriolus" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			メーカー：SONY 製品名：MDR-1A
-			<img src="../photo/MDR-1A.jpg" alt="MDR-1A" Border="0" width="200" height="155" /></A>
-			</li>
-			<li>
-			<A Href="Product.php">
-			メーカー：PHILIPS 製品名：SHE9710
-			<img src="../photo/SHE9710.jpg" alt="SHE9710" Border="0" width="200" height="155" /></A>
-			</li>
+		<table>
+			<?php 
+			while($row = mysql_fetch_assoc($etc)){
+			?>
+			<tr>
+			<td><a href="AnyThing.php"><img src=<?php print $row['picture']; ?> Border=0 width=180 height=180 /></a></td>
+			</tr>
+			<?php 
+			}
+			?>
+		</table>
 		</ol>
 		<hr>
 		</div>
