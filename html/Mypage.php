@@ -12,7 +12,7 @@ if(!isset($_SESSION['name'])){
 	$db_select = mysql_select_db('audioyamauchi', $link);
 	mysql_set_charset('utf8');
 	
-	$result = mysql_query("select name from member where member_ID = '$id' and pass = '$pass'");
+	$result = mysql_query("select member_ID, name from member where member_ID = '$id' and pass = '$pass'");
 	$row = mysql_fetch_assoc($result);
 	$name = $row['name'];
 	
@@ -20,6 +20,7 @@ if(!isset($_SESSION['name'])){
 		include 'Sign In.php';
 	}else{
 		$_SESSION['name'] = $name;
+		$_SESSION['member_ID'] = $row['member_ID'];
 		session_write_close();
 		include 'Mypage.php';
 	}
