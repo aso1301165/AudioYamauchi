@@ -2,11 +2,11 @@
 session_start ();
 if (isset ( $_SESSION ['member_ID'] )) {
 	$member = $_SESSION ['member_ID'];
-	
+
 	$link = mysql_connect ( 'localhost', 'root', '' );
 	$db_select = mysql_select_db ( 'audioyamauchi', $link );
 	mysql_set_charset ( 'utf8' );
-	
+
 	$result = mysql_query ( "select p.product_ID as ID, p.name as name, format(p.price, 0) as price, p.picture as pic from product p, cart c where p.product_ID = c.product_ID and c.member_ID = '$member'" );
 } else {
 	if (isset ( $_SESSION ['array'] )) {
@@ -109,11 +109,11 @@ if (isset ( $_SESSION ['member_ID'] )) {
 					<th>注文個数</th>
 					<th>削除</th>
 				</Tr>
-			<form action="delete_cart.php" method="post">
 			<?php
 			if (isset ( $_SESSION ['member_ID'] )) {
 				while ( $row = mysql_fetch_assoc ( $result ) ) {
 					?>
+			<form action="delete_cart.php" method="post">
 
  			<Tr>
 					<td align="center"><input id="check_item[0]" type="checkbox"
@@ -165,6 +165,7 @@ if (isset ( $_SESSION ['member_ID'] )) {
 					<input type="hidden" name="num" value="<?php print $row['ID']?>">
 					<td width="40" bgcolor="#ffffff" nowrap align="center"><input type="submit" value="削除"></td>
 				</Tr>
+				</form>
   			<?php
 				}
 			} else {
@@ -173,10 +174,12 @@ if (isset ( $_SESSION ['member_ID'] )) {
 					$link = mysql_connect ( 'localhost', 'root', '' );
 					$db_select = mysql_select_db ( 'audioyamauchi', $link );
 					mysql_set_charset ( 'utf8' );
-					
-					$nomem = mysql_query ( "select name, price, picture from product where product_ID = '$value'" );
+
+					$nomem = mysql_query ( "select product_ID, name, price, picture from product where product_ID = '$value'" );
 					while($row = mysql_fetch_assoc ( $nomem )){
 					?>
+					<form action="delete_cart.php" method="post">
+
 		 			<Tr>
 					<td align="center"><input id="check_item[0]" type="checkbox"
 						name="check_item[0]" value="true" checked="checked"></td>
@@ -186,7 +189,7 @@ if (isset ( $_SESSION ['member_ID'] )) {
 						Border="0" width="200" height="155" />
 						<?php print $row['name']; ?>
 			  			</td>
-			
+
 								<td>
 						￥<?php print $row['price'];?>
 						</td>
@@ -224,18 +227,19 @@ if (isset ( $_SESSION ['member_ID'] )) {
 							<option value="29">29</option>
 							<option value="30">30</option>
 					</select></td>
-					<input type="hidden" name="product2" value="<?php print $row['name']?>">
-					<input type="hidden" name="num" value="<?php print $row['ID']?>">
 					<td width="40" bgcolor="#ffffff" nowrap align="center"><input type="submit" value="削除"></td>
-					
-				</Tr>			
+
+					<input type="hidden" name="product2" value="<?php print $row['name']; ?>" />
+					<input type="hidden" name="num" value="<?php print $row['product_ID']; ?>" />
+					</form>
+				</Tr>
 			<?php
 						}
 					}
 				}
 			}
 			?>
-			</form>
+
 
  		</Table>
 
